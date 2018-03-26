@@ -22,11 +22,9 @@ class ViewController: UIViewController, UITextFieldDelegate{
         print(num)
         if randomText.text == String(num) {
             result.text = "성공"
-           
         }
         else{
             result.text = "실패. 답은 \(num)"
-            
         }
        randomText.resignFirstResponder();
     }
@@ -36,7 +34,6 @@ class ViewController: UIViewController, UITextFieldDelegate{
         print(num)
         if randomText.text == String(num) {
             result.text = "성공"
-            
         }
         else{
             result.text = "실패. 답은 \(num)"
@@ -44,6 +41,9 @@ class ViewController: UIViewController, UITextFieldDelegate{
         randomText.resignFirstResponder();
         return true
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {//화면 클릭했을때 이벤트
+        view.endEditing(true)// 입력 종료 = .resignFirstResponder()
+        randomText.textColor = UIColor.blue
+    }
 }
 
